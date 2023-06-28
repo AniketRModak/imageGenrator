@@ -26,83 +26,202 @@ nav {
 #submitbtn:hover {
 	background-color: #65676a;
 }
-label.logo {
-	color: white;
-	font-size: 35px;
-	line-height: 80px;
-	padding: 0 100px;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.4s;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+/* Navbar section */
+
+.nav {
+	width: 100%;
+	height: 65px;
+	position: fixed;
+	line-height: 65px;
+	text-align: center;
+	background-color: black;
+}
+
+.nav div.logo {
+	width: auto;
+	height: 10px;
+	position: absolute;
+}
+
+.nav div.logo a {
+	text-decoration: none;
+	color: #fff;
 	font-weight: bold;
-}
-nav ul {
-	float: right;
-	margin-right: 20px;
-}
-nav ul li {
-	display: inline-block;
-	line-height: 80px;
-	margin: 0 5px;
-}
-nav ul li a {
-	color: white;
-	font-size: 17px;
-	padding: 7px 13px;
-	border-radius: 3px;
+	font-size: 1.8em;
 	text-transform: uppercase;
 }
-a.active,
-a:hover {
-	background: #65676a;
-	transition: 0.5s;
+
+.nav div.logo a:hover {
+	color: #c0c0c0;
 }
-.checkbtn {
-	font-size: 30px;
-	color: white;
+
+.nav div.main_list {
+	width: 600px;
+	height: 65px;
 	float: right;
-	line-height: 80px;
-	margin-right: 40px;
+}
+
+.nav div.main_list ul {
+	width: 100%;
+	height: 65px;
+	display: flex;
+	list-style: none;
+}
+
+.nav div.main_list ul li {
+	width: 120px;
+	height: 65px;
+}
+
+.nav div.main_list ul li a {
+	text-decoration: none;
+	color: #fff;
+	line-height: 65px;
+	text-transform: uppercase;
+}
+
+.nav div.main_list ul li a:hover {
+	color: #c0c0c0;
+}
+
+.nav div.media_button {
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	position: absolute;
+	right: 15px;
+	top: 12px;
+	display: none;
+}
+
+.nav div.media_button button.main_media_button {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	outline: 0;
+	border: none;
 	cursor: pointer;
+}
+
+.nav div.media_button button.main_media_button span {
+	width: 98%;
+	height: 1px;
+	display: block;
+	background-color: #fff;
+	margin-top: 9px;
+	margin-bottom: 10px;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(1) {
+	transform: rotateY(180deg);
+	transition: all 0.5s;
+	background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(2) {
+	transform: rotateY(180deg);
+	transition: all 0.4s;
+	background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(3) {
+	transform: rotateY(180deg);
+	transition: all 0.3s;
+	background-color: #c0c0c0;
+}
+
+.nav div.media_button button.active span:nth-of-type(1) {
+	transform: rotate3d(0, 0, 1, 45deg);
+	position: absolute;
+	margin: 0;
+}
+
+.nav div.media_button button.active span:nth-of-type(2) {
 	display: none;
 }
-#check {
-	display: none;
+
+.nav div.media_button button.active span:nth-of-type(3) {
+	transform: rotate3d(0, 0, 1, -45deg);
+	position: absolute;
+	margin: 0;
 }
-@media (max-width: 952px) {
-	label.logo {
-		font-size: 30px;
-		padding-left: 50px;
-	}
-	nav ul li a {
-		font-size: 16px;
+
+.nav div.media_button button.active:hover span:nth-of-type(1) {
+	transform: rotate3d(0, 0, 1, 20deg);
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(3) {
+	transform: rotate3d(0, 0, 1, -20deg);
+}
+
+/* Home section */
+
+/* Medai qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.container {
+		margin: 0;
 	}
 }
-@media (max-width: 858px) {
-	.checkbtn {
-		display: block;
+
+@media screen and (max-width: 768px) {
+	.container {
+		margin: 0;
 	}
-	ul {
-		position: fixed;
+
+	.nav div.logo {
+		margin-left: 15px;
+	}
+
+	.nav div.main_list {
 		width: 100%;
-		height: 100vh;
-		background: #2c3e50;
+		margin-top: 65px;
+		height: 0px;
+		overflow: hidden;
+	}
+
+	.nav div.show_list {
+		height: 200px;
+	}
+
+	.nav div.main_list ul {
+		flex-direction: column;
+		width: 100%;
+		height: 200px;
 		top: 80px;
-		left: -100%;
-		text-align: center;
-		transition: all 0.5s;
-	}
-	nav ul li {
-		display: block;
-		margin: 50px 0;
-		line-height: 30px;
-	}
-	nav ul li a {
-		font-size: 20px;
-	}
-	a:hover,
-	a.active {
-		background: none;
-		color: #0082e6;
-	}
-	#check:checked ~ ul {
+		right: 0;
 		left: 0;
+	}
+
+	.nav div.main_list ul li {
+		width: 100%;
+		height: 40px;
+		background-color: black;
+	}
+
+	.nav div.main_list ul li a {
+		text-align: center;
+		line-height: 40px;
+		width: 100%;
+		height: 40px;
+		display: table;
+	}
+
+	.nav div.media_button {
+		display: block;
 	}
 }

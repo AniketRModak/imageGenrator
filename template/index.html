@@ -13,18 +13,27 @@
 		/>
 	</head>
 	<body>
-		<nav>
-			<input type="checkbox" id="check" />
-			<label for="check" class="checkbtn">
-				<i class="fas fa-bars"></i>
-			</label>
-			<label class="logo">AI image genrator</label>
-			<ul>
-				<li><a class="active" href="http://127.0.0.1:81">Home</a></li>
-				<li><a href="#">Project</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="/about">About Us</a></li>
-			</ul>
+		<nav class="nav">
+			<div class="container">
+				<div class="logo">
+					<a href="#">AI Image Generator</a>
+				</div>
+				<div class="main_list" id="mainListDiv">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Project</a></li>
+						<li><a href="#">COntact</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+				<div class="media_button">
+					<button class="main_media_button" id="mediaButton">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
 		</nav>
 
 		<div class="container">
@@ -311,6 +320,15 @@
 			crossorigin="anonymous"
 		></script>
 		<script>
+			var mainListDiv = document.getElementById("mainListDiv"),
+				mediaButton = document.getElementById("mediaButton");
+
+			mediaButton.onclick = function () {
+				"use strict";
+
+				mainListDiv.classList.toggle("show_list");
+				mediaButton.classList.toggle("active");
+			};
 			submitbtn.addEventListener("click", (e) => {
 				loadingGif.classList.toggle("d-none");
 				e.preventDefault();
