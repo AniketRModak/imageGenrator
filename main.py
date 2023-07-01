@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 import openai
 from flask import render_template
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__, template_folder='template')
 
@@ -26,4 +26,4 @@ def generate(prompt):
     return jsonify(response)
 
 
-app.run(host='0.0.0.0', port=81)
+app.run(host='0.0.0.0', port=5008)
