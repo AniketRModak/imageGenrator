@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 import openai
 from flask import render_template
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__, template_folder='template')
 
@@ -15,7 +15,7 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template('aboutUs.html', )
+    return render_template('about.html', )
 
 
 @app.route('/generateimages/<prompt>')

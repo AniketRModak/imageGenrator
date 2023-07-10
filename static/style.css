@@ -15,11 +15,12 @@
 }
 body {
 	background: linear-gradient(
-		23deg,
-		rgb(0 0 0) 0%,
-		rgb(151 0 163) 50%,
-		rgb(77 156 245) 100%
-	);
+			23deg,
+			rgb(0 0 0) 0%,
+			rgb(151 0 163) 50%,
+			rgb(77 156 245) 100%
+		)
+		no-repeat;
 	color: var(--t-color);
 }
 ::-webkit-scrollbar {
@@ -147,6 +148,7 @@ nav {
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1rem;
 	row-gap: 2rem;
+
 	margin: 4rem 2rem 0rem 2rem;
 }
 
